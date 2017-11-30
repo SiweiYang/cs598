@@ -1,0 +1,402 @@
+<html>
+<head>
+<title>Designing and Building Applications for Extreme Scale Systems</title>
+<style type="text/css">
+dt { font-weight:bold; }
+</style>
+</head>
+<body>
+
+<h1>Designing and Building Applications for Extreme Scale Systems</h1>
+Learn how to design and implement applications for extreme scale
+systems, including analyzing and understanding the performance of
+applications, the primary causes of poor performance and scalability,
+and how both the choice of algorithm and programming system impact
+achievable performance.The course covers multi-and many-core
+processors, interconnects in HPC systems, parallel I/O, and the impact
+of faults on program and algorithm design.
+
+<h2>Sessions</h2>
+
+<dl>
+<dt>Introduction</dt>
+<dd>
+<ul>
+<li> <a href="lectures/lecture01.pdf">Designing and Building
+Applications for Extreme Scale Systems CS598: Introduction to the
+    Class</a>
+<li> <a href="http://recordings.engineering.illinois.edu/ess/echo/presentation/31d913a1-7c68-4683-92e3-8c9ef73bdb87?ec=true">Link to video</a>
+</ul>
+</dd>
+
+<dt>Performance Modeling and Extreme Scale Systems</dt>
+<dd>
+Covers what extreme scale systems are today and the scale of problems they are used to solve.  Introduces basic performance modeling and its use to gain insight into the performance of applications.
+<ul>
+<li> <a href="lectures/lecture02.pdf">Basic Performance Models For
+    Extreme Scale Systems</a>
+<li> <a href="http://recordings.engineering.illinois.edu/ess/echo/presentation/f0b98be5-cf4a-492c-9de7-f9d03e8427c7?ec=true">Link to video</a>
+<li> <a href="clkbw.pdf">Example of clock timing granularity (on Blue Waters)</a>
+<li> <a href="clockgran.c">Code for clock granularity: clockgran.c</a>
+</ul>
+</dd>
+
+<dt>Benchmarking and Sparse Matrix Vector Multiply</dt>
+<dd>This session introduces some of the most important HPC benchmarks.
+<p>
+The second presentation analyzes a sparse matrix-vector multiply and
+  shows how a simple performance model gives insight into application
+  performance.
+<ul>
+<li> <a href="lectures/lecture03.pdf">Benchmarks</a>
+<li> <a href="http://recordings.engineering.illinois.edu/ess/echo/presentation/a374e95a-04f4-4368-8d67-736821227d2c?ec=true">Link to video</a>
+<li> <a href="lectures/lecture04.pdf">Modeling Sparse Matrix-Vector
+    Multiply</a>
+<li> <a href="http://recordings.engineering.illinois.edu/ess/echo/presentation/41d3441a-cdd9-429b-a556-4c20f9fee86a?ec=true">Link to video</a>
+<li> <a href="spmv.c">Sparse-matrix vector multiply code</a>
+</ul>
+</dd>
+
+<dt>Cache Memory and Performance</dt>
+<dd>
+This session adds cache memory to the performance model.
+
+The second lecture discusses some of the challenges in measuring performance.
+<ul>
+<li> <a href="lectures/lecture05.pdf">More on Cache Memory</a>
+<li> <a href="http://recordings.engineering.illinois.edu/ess/echo/presentation/a8016e96-73e8-4eb6-989f-75d51aa5c3b5?ec=true">Link to video</a>
+<li> <a href="lectures/lecture06.pdf">Measuring Performance</a>
+<li> <a href="http://recordings.engineering.illinois.edu/ess/echo/presentation/6c0f0772-e4db-4ce2-9d65-3eba74ef773a?ec=true">Link
+    to video</a>
+<li> <a href="http://dl.acm.org/citation.cfm?doid=2133382.2133384">Reading: When Prefetching Works, When it Doesn't, and Why</a>
+<li> <a href="cotranspose.c">Cache Oblivious matrix transpose code</a>
+</ul>
+</dd>
+
+<dt>Spatial Locality</dt>
+<dd>
+This session discusses the importance of spatial locality and how to
+model the performance of a simple cache memory system.
+<ul>
+<li> <a href="lectures/lecture07.pdf">Matrix Transpose</a>
+<li> <a href="http://recordings.engineering.illinois.edu/ess/echo/presentation/cf5b4fec-d56f-4b6b-a76b-255cb6bee1a6?ec=true">Link to video</a>
+<li> <a href="transpose-loopy.pdf">Automating Code Tuning: An Example with Transpose</a>
+</ul>
+</dd>
+
+<dt>The Cache Oblivious Approach</dt>
+<dd>
+This session discusses a way to think about caches and developing
+algorithms and implementations which is (mostly) independent of the
+specific details of the cache.  The second presentation covers some
+other features of caches that can impact performance.
+<ul>
+<li> <a href="lectures/lecture08.pdf">The Cache Oblivious Approach</a>
+<li> <a href="http://recordings.engineering.illinois.edu/ess/echo/presentation/80376d08-e78b-432d-9e6b-5650ae7d40c6?ec=true">Link to video</a>
+<li> <a href="lectures/lecture09.pdf">More on Caches</a>
+<li> <a href="http://recordings.engineering.illinois.edu/ess/echo/presentation/f263eadb-c511-4ee4-a56c-18469664895a?ec=true">Link to video</a>
+</ul>
+</dd>
+
+<dt>More on How the Processor Works</dt>
+<dd>
+This session discusses a simple execution model and introduces the
+issue of aliasing of memory.
+<p>
+The second lecture revisits the dense matrix-matrix multiply operation
+using the ideas developed in this class.
+<ul>
+<li> <a href="lectures/lecture10.pdf">Processing Instructions</a>
+<li> <a href="http://recordings.engineering.illinois.edu/ess/echo/presentation/2ff46fec-ff60-40b5-9236-d82701ddbc8d?ec=true">Link to video</a>
+<li> <a href="lectures/lecture11.pdf">Matrix-Matrix Multiply</a>
+<li> <a href="http://recordings.engineering.illinois.edu/ess/echo/presentation/3f7ca979-02a6-43b9-b080-369739b7f460?ec=true">Link to video</a>
+</ul>
+</dd>
+
+<dt>Instruction Execution and Pipelining</dt>
+<dd>
+This session covers how modern processors execute instructions in a
+series of steps and how it affects performance.
+<ul>
+<li> <a href="lectures/lecture12.pdf">Instruction Execution and Pipelining</a>
+<li> <a href="http://recordings.engineering.illinois.edu/ess/echo/presentation/8b41ecf7-9556-4898-854f-0f2f3ea16b42?ec=true">Link to video</a>
+<li> <a href="http://onlinelibrary.wiley.com/doi/10.1002/cpe.3180/abstract">Reading:
+    Exploring performance and power properties of modern multi-core
+    chips via simple machine models</a>
+</ul>
+</dd>
+
+<dt>Vectors</dt>
+<dd>
+This session introduces vectors in modern processors and discusses
+some of their features and challenges.
+<ul>
+<li> <a href="lectures/lecture13.pdf">Vectors</a>
+<li> <a href="http://recordings.engineering.illinois.edu/ess/echo/presentation/88793e09-9d69-4d0b-96bf-645f47376720?ec=true">Link
+    to video</a>
+<li> <a href="examples/tsvc.tar.gz">Vectorization Test Programs</a>This is a
+  large collection of test programs for vectorization.  There is a
+  autoconf-style configure file and a Makefile that contains
+  vectorization options for <em>some</em> compilers.
+<li> <a href="BWvec.pdf">Vectorization results on Blue Waters</a>
+<li> <a href="BWvec.xlsx">Spreadsheet of vectorization results</a>
+</ul>
+</dd>
+
+<dt>Moore's Law and Speedup</dt>
+<dd>
+This session discusses Moore's Law, Dennard Scaling, and some limits
+on speedup of applications.
+<ul>
+<li> <a href="lectures/lecture14.pdf">Discussing Speedup</a>
+<li> <a href="http://recordings.engineering.illinois.edu/ess/echo/presentation/01ce3b60-5db4-440c-bcdd-f97668ec487e?ec=true">Link to video</a>
+<li> <a href="lectures/lecture15.pdf">Moore's Law and Dennard Scaling</a>
+<li> <a href="http://recordings.engineering.illinois.edu/ess/echo/presentation/4d9afac0-9645-4933-8e15-f3994cfc4548?ec=true">Link to video</a>
+</ul>
+</dd>
+
+<dt>Threads</dt>
+<dd>
+This section introduces threads and thread parallelism, including some
+advantages and disadvantages of shared memory.
+<ul>
+<li> <a href="lectures/lecture16.pdf">Threads</a>
+<li> <a href="http://recordings.engineering.illinois.edu/ess/echo/presentation/850c7664-699a-4b31-8f06-5b4bf30082a8?ec=true">Link
+    to video</a>
+<li> <a href="http://dl.acm.org/citation.cfm?doid=2076450.2076465">Reading:
+    You Don't Know Jack about Shared Variables or Memory Models</a>
+</ul>
+</dd>
+
+<dt>OpenMP Basics</dt>
+<dd>
+This session introduces OpenMP, the most widely used approach for
+threaded programming for scientific applications, and how to use
+OpenMP to parallelize loops.
+<ul>
+<li> <a href="lectures/lecture17.pdf">OpenMP Basics</a>
+<li> <a href="http://recordings.engineering.illinois.edu/ess/echo/presentation/aa9ab7be-18f4-4034-918f-cc3401282b76?ec=true">Link
+    to video</a>
+<li> <a href="http://www.viva64.com/en/a/0054/">Reading: 32 OpenMP Traps for
+    C++ Developers</a>.  Many of these also apply to C.
+</ul>
+</dd>
+
+<dt>OpenMP and MAXLOC</dt>
+<dd>
+This session discusses critical sections and atomic operations in
+loops in OpenMP, with an emphasis on understanding the performance
+implications of different approaches.
+<ul>
+<li> <a href="lectures/lecture18.pdf">OpenMP and MAXLOC</a>
+<li> <a href="http://recordings.engineering.illinois.edu/ess/echo/presentation/7538be9f-1e4a-4816-a756-4b8b2abc5f8e?ec=true">Link to video</a>
+</ul>
+</dd>
+
+<dt>OpenMP and General Synchronization</dt>
+<dd>
+This session discusses more general loop parallelism in OpenMP, using
+a linked list as an example in discussing thread locks and
+performance.
+<ul>
+<li> <a href="lectures/lecture19.pdf">OpenMP and General
+    Synchronization</a>
+<li> <a href="http://recordings.engineering.illinois.edu/ess/echo/presentation/d4ef058d-f52e-48ef-9e16-896f52b4913d?ec=true">Link to video</a>
+</ul>
+</dd>
+
+<dt>Distributed Memory Parallelism</dt>
+<dd>
+An overview of parallelism, from single processors to massively
+parallel distributed memory systems.  Interconnects and bisection
+bandwidth.
+<ul>
+<li> <a href="lectures/lecture20.pdf">Distributed Memory Parallelism</a>
+<li> <a href="http://recordings.engineering.illinois.edu/ess/echo/presentation/452d6c0a-884f-4d70-ad5d-6fb03bdfd9ff?ec=true">Link to video</a>
+</ul>
+</dd>
+
+<dt>Parallel Programming Models and Systems</dt>
+<dd>
+Illustrates different ways to program the same simple loop, using
+different parallel programming systems.  Emphasizes the role of the
+data decomposition in expressing parallelism.
+<ul>
+<li> <a href="lectures/lecture21.pdf">Parallel Programming Models for
+    Scientific Computing</a>
+<li> <a href="http://recordings.engineering.illinois.edu/ess/echo/presentation/d5967093-dc6d-4078-bb1f-005e7ea4ebb1?ec=true">Link to video</a>
+</ul>
+</dd>
+
+<dt>MPI Basics</dt>
+<dd>
+An introduction to the Message Passing Interface (MPI), including
+simple send and receive.
+<ul>
+<li> <a href="lectures/lecture22.pdf">MPI Basics</a>
+<li> <a href="http://recordings.engineering.illinois.edu/ess/echo/presentation/f6118b01-6d54-4100-a343-72bc9d1df56e?ec=true">Link
+    to video</a>
+<li> <a href="http://dl.acm.org/citation.cfm?doid=2642769.2642785">Reading: Reproducible MPI Micro-Benchmarking Isn't As Easy As You Think</a>
+</ul>
+</dd>
+
+<dt>MPI Point to Point Communication</dt>
+<dd>
+Understanding MPI point to point communication, including the effects
+of the MPI implementation
+<ul>
+<li> <a href="lectures/lecture23.pdf">More on Point-to-Point Communication</a>
+<li> <a href="http://recordings.engineering.illinois.edu/ess/echo/presentation/cd0adba3-8fba-4868-aa2f-efe38e068520?ec=true">Link to video</a>
+<li> <a href="lectures/lecture24.pdf">Buffering and Message Protocols</a>
+<li> <a href="http://recordings.engineering.illinois.edu/ess/echo/presentation/3b00eaa7-e62a-43c3-8bbb-55fdbe25a2e2?ec=true">Link to video</a>
+<li> <a href="mpptest-bw.pdf">Ping-pong Performance on Blue Waters</a>
+</ul>
+</dd>
+
+<dt>Strategies for Designing Parallel Applications</dt>
+<dd>
+An introduction to several ways to think about the design of a
+parallel application, with a halo exchange as an example
+<ul>
+<li> <a href="lectures/lecture25.pdf">Strategies for Parallelism and
+    Halo Exchange</a>
+<li> <a href="http://recordings.engineering.illinois.edu/ess/echo/presentation/943d252b-5f6f-4e1a-a075-c060e4fa5a7f?ec=true">Link to video</a>
+<li> <a href="bw-async.pdf">Comparison of blocking and nonblocking pingpong</a>
+</ul>
+</dd>
+
+<dt>Performance Models</dt>
+<dd>
+<ul>
+<li> <a href="lectures/lecture26.pdf">Performance Models for
+    Distributed Memory Parallel Computing</a>
+<li> <a href="http://recordings.engineering.illinois.edu/ess/echo/presentation/2000c671-016e-4f05-98e4-ac03affb23eb?ec=true">Link to video</a>
+<li> <a href="least-squares.pdf">Least Squares for Performance Modeling</a>
+</ul>
+
+<dt>More on Efficient Halo Exchange</dt>
+<dd>
+This session uses halo exchange to explain the importance of deferring
+synchronization.  It also discusses the use of MPI datatypes to avoid
+extra memory motion.
+<ul>
+<li> <a href="lectures/lecture27.pdf">Halo Exchange and Contention</a>
+<li> <a href="http://recordings.engineering.illinois.edu/ess/echo/presentation/4aad7fbb-5283-4ec3-9d64-2b6cd41725a5?ec=true">Link to video</a>
+<li> <a href="lectures/lecture27a.pdf">MPI Datatypes</a>
+<li> <a href="http://recordings.engineering.illinois.edu/ess/echo/presentation/add98a6f-b515-4f2d-94aa-2b61dda6e40f?ec=true">Link to video</a>
+</ul>
+</dd>
+
+<dt>MPI Process Topologies</dt>
+<dd>
+This session discusses virtual and actual (physical) topologies and
+how to use MPI to influence the layout of processes on the parallel
+computer
+<ul>
+<li> <a href="lectures/lecture28.pdf">Process Topology and MPI</a>
+<li> <a href="http://recordings.engineering.illinois.edu/ess/echo/presentation/25dfed9d-71ec-4a36-838c-12302169b6ad?ec=true">Link to video</a>
+<li> <a href="lectures/SMPCommModel.pdf">Enhancing the Communication Performance Models for SMPs</a>
+</ul>
+</dd>
+
+<dt>Collective Communication in MPI</dt>
+<dd>
+This session discusses the rich collective communication and
+computation features available in MPI
+<ul>
+<li> <a href="lectures/lecture29.pdf">Collective Communication and
+    Computation in MPI</a>
+<li> <a href="http://recordings.engineering.illinois.edu/ess/echo/presentation/fbe4d342-8def-45a3-b03e-79521e42c2b7?ec=true">Link to video</a>
+</ul>
+</dd>
+
+<dt>More on Collective Communication</dt>
+<dd>
+This session discusses some performance considerations of collective
+operations, including an example of when using an optimal collective
+routine gives poorer performance than simpler choices for
+communication
+<ul>
+<li> <a href="lectures/lecture30.pdf">Considerations When Using
+    Collective Operations</a>
+<li> <a href="http://recordings.engineering.illinois.edu/ess/echo/presentation/5421a480-d457-4a7b-891a-af40c25f8ecf?ec=true">Link to video</a>
+</ul>
+</dd>
+
+<dt>Introduction to Parallel I/O</dt>
+<dd>
+This session introduces some of the issues in effectively using I/O
+with massively parallel computers.
+<ul>
+<li> <a href="lectures/lecture31.pdf">Introduction to Parallel I/O</a>
+<li> <a href="http://recordings.engineering.illinois.edu/ess/echo/presentation/71ce5baf-39b6-4046-8abe-834f4f391bf7?ec=true">Link to video</a>
+</ul>
+</dd>
+
+<dt>Introduction to MPI I/O</dt>
+<dd>
+An introduction to the parallel I/O features provided by MPI and how
+they compare to POSIX I/O.
+<ul>
+<li> <a href="lectures/lecture32.pdf">Introduction to MPI I/O</a>
+<li> <a href="http://recordings.engineering.illinois.edu/ess/echo/presentation/a2e9da92-f01c-4278-b969-6c172885fc0d?ec=true">Link to video</a>
+</ul>
+</dd>
+
+<dt>More on MPI I/O Performance</dt>
+<dd>
+This session covers more on MPI I/O, including performance optimizations.
+<ul>
+<li> <a href="lectures/lecture33.pdf">More on MPI I/O</a>
+<li> <a href="http://recordings.engineering.illinois.edu/ess/echo/presentation/1ff72de1-c4f7-486d-8cd5-f25e27683058?ec=true">Link to video</a>
+<li> <a href="examples/ioda.c">ioda.c</a>
+</ul>
+</dd>
+
+<dt>One-Sided Communication in MPI</dt>
+<dd>
+This session introduces a different model of parallel computing,
+one-sided communication, and describes how this model is represented
+in MPI.
+<ul>
+<li> <a href="lectures/lecture34.pdf">One-sided Communication in MPI</a>
+<li> <a href="http://recordings.engineering.illinois.edu/ess/echo/presentation/4845f88e-6098-489f-adaf-987f64563ec9?ec=true">Link to video</a>
+</ul>
+</dd>
+
+<dt>More on One-Sided Communication</dt>
+<dd>
+This session covers passive target synchronization and understanding
+the MPI RMA memory models.
+<ul>
+<li> <a href="lectures/lecture35.pdf">More on One-sided Communication</a>
+<li> <a href="http://recordings.engineering.illinois.edu/ess/echo/presentation/cacfebfb-4035-4cd5-84f8-0498d669541c?ec=true">Link to video</a>
+<li> <a href="examples/ga_mpi_ddt_rma.c">Example program ga_mpi_ddt_rma.c</a>
+</ul>
+</dd>
+
+<dt>MPI, Hybrid Programming, and Shared Memory</dt>
+<dd>
+An introduction to using the MPI+X hybrid programming approach.  MPI
+with threads and the different thread levels are covered.  Also
+introduced is the MPI-3 shared-memory feature, sometimes called the
+MPI+MPI programming approach.
+<ul>
+<li> <a href="lectures/lecture36.pdf">MPI, Hybrid Programming, and Shared Memory</a>
+<li> <a href="http://recordings.engineering.illinois.edu/ess/echo/presentation/80aee265-099b-4ea8-b803-83a782bedd02?ec=true">Link to video</a>
+</ul>
+</dd>
+
+<dt>New Features of MPI-3</dt>
+<dd>This session provides a summary of the new features in MPI-3.
+<ul>
+<li> <a href="lectures/lecture37.pdf">New Features of MPI-3</a>
+<li> <a href="http://recordings.engineering.illinois.edu/ess/echo/presentation/bcb7258f-bb1e-47c7-8969-4b2d1a8a9507?ec=true">Link to video</a>
+</ul>
+</dd>
+
+
+</dl>
+
+</body>
+</html>
